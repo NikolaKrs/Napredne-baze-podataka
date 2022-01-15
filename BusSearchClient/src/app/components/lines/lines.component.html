@@ -1,0 +1,15 @@
+
+<div class="proba" [style] = "custopmHeigh">
+
+<div class = "container {{customClass}}" >
+
+        <div *ngFor="let line of lines | async" >
+            <app-line [station]="station"  [line]="line"></app-line>
+        </div>
+     
+        
+    </div>
+
+</div>
+    
+

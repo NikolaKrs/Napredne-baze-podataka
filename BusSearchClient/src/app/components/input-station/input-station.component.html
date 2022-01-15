@@ -1,0 +1,55 @@
+
+<div class="title"><h1>Unos stanice</h1></div>
+<div class="container">
+
+    <h2>Izaberite grad:</h2>
+    <select (change)="loadLines($event)"> 
+     <option>Izaberi grad</option>
+     <option *ngFor="let city of cities | async" value="{{city.name}}">{{city.name}}</option>
+    </select>
+
+    <h2>Izaberite liniju:</h2>
+    
+    <select (change)="loadStations($event)">
+        <option>Izaberi liniju</option>
+        <option *ngFor="let line of lines | async" value="{{line.name}}">{{line.name}}</option>
+    </select>
+
+    <h2>Izaberite stanicu:</h2>
+    <select (change)="changeValue('stationName',$event)">
+        <option>Izaberi stanicu</option>
+        <option *ngFor="let station of stations | async" value="{{station.name}}">{{station.name}}</option>
+    </select>
+
+    <h2>Unesite ime stanice:</h2>
+    <input type="text" (change)="changeValue('newStationName',$event)" >
+
+    <div class="double">
+        <div class="one">
+            <h2>Vreme do:</h2>
+            <input type="text" (change)="changeValue('newStationTimeTo',$event)">
+        </div>
+       <div class="one">
+           <h2>Vreme od:</h2>
+           <input type="text" (change)="changeValue('newStationTimeFrom',$event)">
+       </div>
+    </div>
+
+    <div class="double">
+        <div class="one">
+            <h2>Unesite latitudu:</h2>
+            <input type="text" (change)="changeValue('newStationLat',$event)">
+        </div>
+       <div class="one">
+           <h2>Unesite longitudu:</h2>
+           <input type="text" (change)="changeValue('newStationLng',$event)">
+       </div>
+    </div>
+
+
+    
+  
+
+    <button value="Sacuvaj" (click)="Save()">Sacuvaj</button>
+
+</div>

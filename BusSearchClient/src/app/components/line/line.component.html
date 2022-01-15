@@ -1,0 +1,13 @@
+<div>
+    <div *ngIf="line" class="container">
+        
+        <div class="side">
+            <img src="assets/img/bus.png" alt="">
+            <h1>{{line.name+"| "+line.start+"->"+line.end}}</h1>
+        </div>
+        <div class="side">
+             <img src="assets/img/clock.png" alt="">
+        <h1>{{minutes}}</h1>
+        </div>
+    </div>
+</div>

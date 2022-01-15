@@ -1,0 +1,98 @@
+.container{
+    position:absolute;
+    display:flex;
+    right: 50px;
+    bottom:50px;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.container img{
+    width: 50px;
+}
+
+.container .messimg{
+    background-color: white;
+    padding: 10px;
+    border-radius: 25%;
+}
+
+.container .messagebox{
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    width: 300px;
+    height: 0px;
+    opacity: 0;
+    background-color: #2f5592e0;
+    border-radius: 30px;
+    box-shadow:
+    inset 0 -3em 3em rgba(0,0,0,0.1),
+       0 0  0 0px rgb(255,255,255),
+       0.3em 0.3em 1em rgba(0,0,0,0.3);
+    transition:  1s;   
+}
+
+.container .messagebox.show{
+    transition:  1s;
+    opacity: 1;
+    height: 400px;
+    
+}
+
+.container .messagebox .innermessagebox{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 5px;
+    
+    margin:25px;
+    margin-bottom: 0px;
+    background-color: rgba(153, 153, 153, 0);
+    overflow:hidden;
+    height: 100%;
+
+}
+
+.container .messagebox .sendmessage
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container .messagebox .sendmessage .bgsend{
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    align-items: center;
+    width: 100%;
+    border-top: 3px solid #1A3663;
+    border-radius: 0px 0px 25px 25px;
+    
+
+}
+
+.container .messagebox .sendmessage .bgsend input{
+    width: 100%;
+    height: 50px;
+    border: 1px solid white;
+
+    border-radius: 0px 0px 0px 25px;
+    padding-left: 15px;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+
+}
+.container .messagebox .sendmessage .bgsend input:focus{
+outline: none;
+}
+
+.container .messagebox .sendmessage img{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+

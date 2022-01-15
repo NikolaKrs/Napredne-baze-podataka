@@ -1,0 +1,20 @@
+<app-chat></app-chat>
+<div class="control">
+   <img src="assets/img/add.png" alt="" (click)="options()"> 
+
+   <div class="options">
+       <h2 (click)="choiseOption('city')">Grad</h2>
+       <hr>
+       <h2 (click)="choiseOption('line')">Linija</h2>
+       <hr>
+       <h2 (click)="choiseOption('station')">Stanica</h2>  
+   </div>
+</div>
+ 
+<div class="main">
+    
+    <div class="preview">
+        <router-outlet></router-outlet>
+    </div>
+   
+</div>

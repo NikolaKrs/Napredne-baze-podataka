@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    background-color: #5099CF;
+    padding: 5px;
+    margin-top: 3px;
+    align-self: flex-start;
+}
+
+.root{
+    background-color: tomato;
+    height: 400px;
+    overflow-y: hidden;
+}

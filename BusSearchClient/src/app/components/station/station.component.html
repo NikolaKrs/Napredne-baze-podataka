@@ -1,0 +1,15 @@
+<div>
+    <div *ngIf="station" class="container" (click)="Klik($event)">
+        
+        <div class="left">
+            <img src="assets/img/bus-stop.png" alt="">
+            <h1>{{station.name}}</h1>
+        </div>
+        <img src="assets/img/expand-button.png" alt="">
+        
+    </div>
+    <div class="lines hidden">
+        <app-lines [events]="signalToChild.asObservable()"  [station] = "station"></app-lines>
+    <div>
+    
+</div>

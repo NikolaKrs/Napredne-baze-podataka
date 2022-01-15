@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+.messageleft{
+    padding: 10px;
+      background-color: #7dd6c3;
+      align-self: flex-start;
+      margin-top: 5px;
+      border-radius: 10px 10px 10px 0px;
+      overflow-wrap: break-word;
+      max-width: 70%;
+  
+      box-shadow:
+      inset 0 -3em 3em rgba(0,0,0,0.1),
+         0 0  0 0px rgb(255,255,255),
+         0.3em 0.3em 1em rgba(0,0,0,0.3);
+  }
+  
+  
+  .messageright{
+      padding: 10px;
+      background-color: #c6d7e4;
+      align-self: flex-end;
+      margin-top: 5px;
+      border-radius: 10px 10px 0px 10px;
+      overflow-wrap: break-word;
+      max-width: 70%;
+      box-shadow:
+      inset 0 -3em 3em rgba(0,0,0,0.1),
+         0 0  0 0px rgb(255,255,255),
+         0.3em 0.3em 1em rgba(0,0,0,0.3);
+  }

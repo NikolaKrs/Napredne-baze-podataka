@@ -1,0 +1,12 @@
+<div class="title"><h1>Unos gradova</h1></div>
+<div class="container">
+
+    <h2>Unesite ime grada:</h2>
+    <input type="text" (change)="changeValue('cityName',$event)">
+    <h2>Unesite latitudu:</h2>
+    <input type="text" (change)="changeValue('cityLat',$event)">
+    <h2>Unesite longitudu:</h2>
+    <input type="text" (change)="changeValue('cityLng',$event)">
+    <button value="Sacuvaj" (click)="Save()" >Sacuvaj</button>
+
+</div>

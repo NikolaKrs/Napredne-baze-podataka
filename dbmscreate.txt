@@ -1,0 +1,60 @@
+//gradovi
+CREATE(n:City{name:'Nis',lat:43.313541,lng:21.8617136});
+CREATE(n:City{name:'Beograd',lat:44.8151597,lng:20.282512936});
+CREATE(n:City{name:'Leskovac',lat:42.9976011,lng:21.9132823});
+
+//stanice
+create(n: Station{ name: 'Branko Bjegovic',lat:43.348429818303494, lng:21.889491743477166});
+create(n: Station{ name: 'Mokranjceva',lat:43.304751796800915,lng: 21.912093164026956});
+create(n: Station{ name: 'Marger',lat:43.31562361257801,lng: 21.894764850361476});
+
+//linija
+create(n:Line{name:'9',start:'Mokranjceva',end:'Branko Bjegovic'});
+
+//povezivanje grada i linije
+MATCH
+  (a:City),
+  (b:Line)
+WHERE a.name = 'Nis' AND b.name = '9'
+CREATE (a)-[r:AT]->(b)
+RETURN type(r);
+
+//povezivanje linije i stanice: kreira se veza ciji je atribut redni broj stanice na liniji
+MATCH
+  (a:Line),
+  (b:Station)
+WHERE a.name = '9' AND b.name = 'Mokranjceva'
+CREATE (a)-[r:HAS{sn:0}]->(b)
+RETURN type(r);
+
+MATCH
+  (a:Line),
+  (b:Station)
+WHERE a.name = '9' AND b.name = 'Marger'
+CREATE (a)-[r:HAS{sn:1}]->(b)
+RETURN type(r);
+
+MATCH
+  (a:Line),
+  (b:Station)
+WHERE a.name = '9' AND b.name = 'Branko Bjegovic'
+CREATE (a)-[r:HAS{sn:3}]->(b)
+RETURN type(r);
+
+//kreiranje veza izmedju stanica: veza ima tribut time koji oznacava vreme potrebno od stanice a do stanice b
+MATCH
+  (a:Station),
+  (b:Station)
+WHERE a.name = 'Mokranjceva' AND b.name = 'Marger'
+CREATE (a)-[r:TIME{time:7}]->(b)
+RETURN type(r);
+
+MATCH
+  (a:Station),
+  (b:Station)
+WHERE a.name = 'Marger' AND b.name = 'Branko Bjegovic'
+CREATE (a)-[r:TIME{time:7}]->(b)
+RETURN type(r);
+
+
+
